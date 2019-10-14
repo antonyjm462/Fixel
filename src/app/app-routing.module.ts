@@ -6,10 +6,9 @@ const routes: Routes = [
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)},
   { path: 'gallery', loadChildren: './gallery/gallery.module#GalleryPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
-  { path: 'signup', loadChildren: './signup/signup.module#SignupPageModule' },  { path: 'welcome', loadChildren: './welcome/welcome.module#WelcomePageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-
+  { path: 'forgotpassword', loadChildren: './forgotpassword/forgotpassword.module#ForgotpasswordPageModule' },
 ];
 
 @NgModule({
