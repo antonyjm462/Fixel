@@ -1,6 +1,6 @@
 import { Injectable,OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { User } from './user';
+import { User } from './model/user';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
