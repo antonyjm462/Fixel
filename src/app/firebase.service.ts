@@ -1,33 +1,30 @@
 import { Injectable,OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { User } from './model/user';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Upfile } from './model/upfile';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FirebaseService {
-  user: any;
   id: any;
-  name: any;
-  number: any;
-  //doc = { payload: { doc: { data: () => { this.id, this.name, this.number} }}};
-  dataList: { name: any; number: any; }[];
+  fileupload: any;
 
-  constructor(private firestore: AngularFirestore) {
-    AngularFireModule.initializeApp(environment.firebase)
+  constructor(private firestore: AngularFirestore, public db: AngularFireDatabase) {
+    AngularFireModule.initializeApp(environment.firebase);
    }
 
-  documentToDomainObject = _ => {
+   documentToDomainObject = _ => {
     const object = _.payload.doc.data();
     object.id = _.payload.doc.id;
     return object;
 }
 
-  getUsers() {
-    return this.firestore.collection('users').snapshotChanges().pipe(map( docArray => {
+  getItem(item: string) {
+    return this.firestore.collection(item).snapshotChanges().pipe(map( docArray => {
       return docArray.map( doc => {
         return(
           {
@@ -39,18 +36,17 @@ export class FirebaseService {
     }));
   }
 
-  createUser(user: User) {
-    return this.firestore.collection('users').add((JSON.parse(JSON.stringify(user))));
+
+  createFile(file: Upfile) {
+    return this.firestore.collection('uploads').add((JSON.parse(JSON.stringify(file))));
   }
 
-  updateUser(userKey, value){
-    return this.firestore.collection('users').doc(userKey).update(value);
+  updateFile(fid, value){
+    return this.firestore.collection('uploads').doc(fid).update(value);
   }
 
-  // Deletes a single User
-  deleteUser(username: string) {
-    return this.firestore.collection('users').doc(username).delete();
+  deleteFile(id) {
+    return this.firestore.collection('uploads').doc(id).delete();
   }
-
 
 }

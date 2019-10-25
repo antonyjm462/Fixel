@@ -1,1 +1,43 @@
+.galleryimage{
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
 
+.image-container {
+  min-height: 200px;
+  background-size: cover;
+}
+ 
+@media (min-width: 0px) {
+  .images {
+    column-count: 2;
+  }
+}
+ 
+@media (min-width: 420px) {
+  .images {
+    column-count: 3;
+  }
+}
+ 
+@media (min-width: 720px) {
+  .images {
+    column-count: 4;
+  }
+}
+ 
+.one-image {
+  margin: 2px;
+  -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+a:active {
+  background-color: blue;
+}
