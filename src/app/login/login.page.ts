@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, TemplateRef } from  '@angular/core';
-import { AuthService } from  'src/app/auth.service';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 
@@ -11,11 +11,11 @@ import { MatDialog } from '@angular/material/dialog';
 export class LoginPage implements OnInit {
     userEmail: any;
     password: any;
-    @ViewChild("modalTemplate", { static: true }) modalTemplate: TemplateRef<any>;
+    @ViewChild('modalTemplate', { static: true }) modalTemplate: TemplateRef<any>;
     userResetEmail: any;
     dialogRef: any;
 
-    constructor(private  authService:  AuthService, public router: Router,public dialog: MatDialog) { }
+    constructor(private  authService: AuthService, public router: Router,public dialog: MatDialog) { }
     ngOnInit() {}
 
     openDialog() {
