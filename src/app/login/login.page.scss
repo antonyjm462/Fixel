@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
     --input-padding-x: 1.5rem;
     --input-padding-y: .75rem;
@@ -138,4 +139,37 @@ body {
     .form-label-group input:-ms-input-placeholder {
         color: #777;
     }
+=======
+@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+    html {
+      transform: rotate(-90deg);
+      transform-origin: left top;
+      width: 100vh;
+      overflow-x: hidden;
+      position: absolute;
+      top: 100%;
+      left: 0;
+    }
+  }
+.btn
+{
+    color:white;
+    font-size: 90%;
+    border-radius: 1rem;
+    letter-spacing: .05rem;
+    font-weight: bold;
+    padding:0.75rem;
+    transition: all 0.2s;
+    background: #1488CC;
+    background: -webkit-linear-gradient(to top, #2B32B2, #1488CC);
+    background: linear-gradient(to top, #2B32B2, #1488CC); 
+}
+.card
+{
+    background: #6441A5;
+    background: -webkit-linear-gradient(to top, #2a0845, #6441A5);
+    background: linear-gradient(to top, #2a0845, #6441A5);
+    box-shadow: 0 1rem 1rem 0 rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+>>>>>>> a297db3ea9e0e69a847e90c1f9a170d04b7dd4cc
 }
