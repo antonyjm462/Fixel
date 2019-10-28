@@ -1,58 +1,1000 @@
 <ion-content>
-<ion-grid>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <h3>Image Picker</h3>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <ion-button  (click)="photoService.takePicture()">Click Images</ion-button>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <img class="galleryimage" [src]="currentImage" *ngIf="photoService.currentImage" />
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <div class="images">
-          <div class="one-image galleryimage" *ngFor="let photo of photoService.photos">
-          <ion-card>
-             <ion-card-content>
-              <a (click)="selectImage(photo.data)">
-                <img [src]="photo.data" />
-              </a>
-           </ion-card-content>
-         </ion-card>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body style="  font-family: 'Comfortaa', cursive; ">
+    <div class="container-fluid col s12" >
+      <br>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div style="padding: 7rem;">    
+            <ion-grid>
+              <!-- <ion-row>
+                <ion-col class="ion-text-center"> -->
+                  <h4>Image Picker</h4>
+                <!-- </ion-col>
+              </ion-row> -->
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <ion-button  (click)="photoService.takePicture()">Click Images</ion-button>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <img class="galleryimage" [src]="currentImage" *ngIf="photoService.currentImage" />
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <div class="images">
+                    <div class="one-image galleryimage" *ngFor="let photo of photoService.photos">
+                      <ion-card>
+                        <ion-card-content>
+                          <a (click)="selectImage(photo.data)">
+                            <img [src]="photo.data" />
+                          </a>
+                        </ion-card-content>
+                      </ion-card>
+                    </div>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <h4>Image Selected</h4>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <div class="images">
+                    <ion-card>
+                      <ion-card-content>
+                        <div class="one-image" *ngFor="let img of imageLists">
+                          <img [src]="img" alt="" srcset="">
+                        </div>
+                      </ion-card-content>
+                    </ion-card>
+                  </div>
+                </ion-col>
+              </ion-row> 
+              <ion-row>
+                <ion-col class="ion-text-center">
+                  <ion-button  (click)="uploadImage()">Click to Upload</ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </div>
           </div>
-      </ion-col>
-    </ion-row>
-  <ion-row>
-      <ion-col class="ion-text-center">
-        <h3>Image Selected</h3>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <div class="images">
-        <ion-card>
-        <ion-card-content>
-          <div class="one-image" *ngFor="let img of imageLists">
-            <img [src]="img" alt="" srcset="">
-          </div>
-          </ion-card-content>
-          </ion-card>
         </div>
-      </ion-col>
-    </ion-row> 
-    <ion-row>
-      <ion-col class="ion-text-center">
-        <ion-button  (click)="uploadImage()">Click to Upload</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </div>
+    </div>
+  </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </ion-content>

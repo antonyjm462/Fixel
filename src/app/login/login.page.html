@@ -1,59 +1,44 @@
 <ion-content>
-        <form #form="ngForm" (ngSubmit)="login(form)">
-                <ion-grid>
-                    <ion-row color="primary" justify-content-center>
-                        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
-                            <div text-center>
-                                <h3>Login</h3>
-                            </div>
-                            <div padding>
-                                <ion-item>
-                                    <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
-                                </ion-item>
-                                <ion-item>
-                                    <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
-                                </ion-item>
-                            </div>
-                            <div padding>
-                                <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
-                            </div>
-                        </ion-col>
-                    </ion-row>
-                    <ion-row>
-                        <div text-center>
-                            If you don't have an account, please <a routerLink='/register'>
-                        register</a> first!
-                        </div>
-                    </ion-row>
-                </ion-grid></form>
-<!--     <div class="container">
-        <div class="row justify-content-center">
-            <img style="height: 180px; width: 180px;" src="../assets/img/icon.png">
-        </div>
-        <div class="row">
-            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-                <div class="card card-signin my-5">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Sign In</h5>
-                        <form class="user" [formGroup]="UserForm" (ngSubmit)="Login()">
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Enter Email Address..." formControlName="Email">
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control form-control-user" placeholder="Password" formControlName="Password">
-                            </div>
-                            <button class="btn btn-primary btn-user btn-block" type="submit">Login</button>
-                        </form>
-                        <hr>
-                        <div class="text-center">
-                            <a class="small" (click)='forgotpassword()'>Forgot Password?</a>
-                        </div>
-                        <div class="text-center">
-                            <a class="small" (click)='register()'>Create an Account!</a>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </head>
+    <body  style=" color:white;font-family: 'Comfortaa', cursive; font-weight:bold;">            
+        <div class="container-fluid col s12" >
+            <br>
+            <div  style="text-align:center;">
+                <img style="height: 125px; width: 125px; top: 100px;"  src="../assets/icon/f.png">
+            </div>
+            <br>    
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card " >
+                        <div style="padding: 2rem;">
+                            <br>
+                            
+                            <h4 class="card-title text-center" style="color:#2B32B2 ;" >LOGIN</h4>
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Enter email" required="true">                                                                        
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control form-control-user" placeholder="Password" required="true">
+                                </div>
+                                <div class="form-group form-check">
+                                    <a href="a">New user?</a>
+                                </div>
+                                <button type="submit" class="btn btn-user btn-block" >Login</button>
+                                <button type="submit" class="btn btn-user btn-block" >Sign in with Google</button>                                
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div -->
-</ion-content>
+        </div> 
+    </body>
+</ion-content>     
