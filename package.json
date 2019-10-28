@@ -1,5 +1,5 @@
 {
-  "name": "Fixelblank",
+  "name": "Fixel",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -20,16 +20,31 @@
     "@angular/core": "~8.1.2",
     "@angular/fire": "^5.2.1",
     "@angular/forms": "~8.1.2",
+    "@angular/http": "^7.2.15",
     "@angular/material": "^8.2.2",
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
     "@angular/router": "~8.1.2",
+    "@ionic-native/base64": "^5.15.1",
+    "@ionic-native/camera": "^5.15.1",
     "@ionic-native/core": "^5.0.0",
+    "@ionic-native/file": "^5.15.1",
+    "@ionic-native/image-picker": "^5.15.1",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^4.7.1",
+    "@ionic/storage": "^2.2.0",
+    "com-badrit-base64": "^0.2.0",
+    "cordova-android": "^8.1.0",
+    "cordova-plugin-camera": "^4.1.0",
+    "cordova-plugin-file": "^6.0.2",
+    "cordova-plugin-image-picker": "^1.1.3",
+    "cordova-plugin-telerik-imagepicker": "^2.3.3",
+    "cordova-sqlite-storage": "^3.4.0",
     "core-js": "^2.5.4",
     "firebase": "^7.2.1",
+    "get-image-pixels": "^1.0.1",
+    "get-pixels": "^3.3.2",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
@@ -48,6 +63,12 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
+    "cordova-plugin-device": "^2.0.2",
+    "cordova-plugin-ionic-keyboard": "^2.2.0",
+    "cordova-plugin-ionic-webview": "^4.1.2",
+    "cordova-plugin-splashscreen": "^5.0.2",
+    "cordova-plugin-statusbar": "^2.4.2",
+    "cordova-plugin-whitelist": "^1.3.3",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
@@ -60,5 +81,25 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "cordova": {
+    "plugins": {
+      "cordova-sqlite-storage": {},
+      "cordova-plugin-camera": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-device": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-ionic-webview": {
+        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+      },
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-telerik-imagepicker": {},
+      "cordova-plugin-file": {},
+      "com-badrit-base64": {}
+    },
+    "platforms": [
+      "android"
+    ]
+  }
 }

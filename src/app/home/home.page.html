@@ -1,20 +1,58 @@
-<ion-header>
-  <ion-navbar>
-      <ion-title>
-      Fixel
-      </ion-title>
-  </ion-navbar>
-  </ion-header>
-  
-  <ion-content  class="home">
-      <p>Hello HomePage</p>
-      <ion-slides pager>
-
-          <ion-slide >
-            <h2><img style="width: 60%;" src="src\assets\345780.jpg" /></h2>
-          </ion-slide>
-        </ion-slides>
-        <div class="home-btn">
-            <button primary class="button-small">Go to App</button>
+<ion-content>
+<ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <h3>Image Picker</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button  (click)="photoService.takePicture()">Click Images</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <img class="galleryimage" [src]="currentImage" *ngIf="photoService.currentImage" />
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="images">
+          <div class="one-image galleryimage" *ngFor="let photo of photoService.photos">
+          <ion-card>
+             <ion-card-content>
+              <a (click)="selectImage(photo.data)">
+                <img [src]="photo.data" />
+              </a>
+           </ion-card-content>
+         </ion-card>
+          </div>
+          </div>
+      </ion-col>
+    </ion-row>
+  <ion-row>
+      <ion-col class="ion-text-center">
+        <h3>Image Selected</h3>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="images">
+        <ion-card>
+        <ion-card-content>
+          <div class="one-image" *ngFor="let img of imageLists">
+            <img [src]="img" alt="" srcset="">
+          </div>
+          </ion-card-content>
+          </ion-card>
         </div>
-  </ion-content>
+      </ion-col>
+    </ion-row> 
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button  (click)="uploadImage()">Click to Upload</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
