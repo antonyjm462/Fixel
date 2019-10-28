@@ -43,6 +43,23 @@
                 </div>
             </div>
         </div> 
+        
+        
+        
+        
+        <ng-template #modalTemplate let-data>
+  <p class="lead">Password Recovery</p>
+  <form class="form" (ngSubmit)="ForgotPassword()">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="E-mail" [(ngModel)]="userResetEmail" [ngModelOptions]="{standalone: true}">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="dialogRef.close();" type="submit"> Send
+    </button>
+  </form>
+  <br>
+  <div class="popup">Reset Your Password With link Sent</div>
+
+</ng-template>
     </body>
 
 
