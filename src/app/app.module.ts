@@ -29,7 +29,7 @@ import { HttpModule } from '@angular/http';
     AngularFireAuthModule,
     AppRoutingModule,
     HttpModule,
-    BrowserAnimationsModule],
+    BrowserAnimationsModule,],
   providers: [
     StatusBar,
     SplashScreen,

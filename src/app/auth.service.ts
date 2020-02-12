@@ -30,7 +30,12 @@ async login(email: string, password: string) {
 }
 
 async register(email: string, password: string) {
-  var result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password)
+  console.log("register");
+  this.afAuth.auth.createUserWithEmailAndPassword(email, password).then(snap=>{
+    console.log(snap);
+  }).catch(error=>{
+    console.log(error);
+  });
   this.sendEmailVerification();
 }
 

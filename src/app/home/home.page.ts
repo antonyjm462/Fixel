@@ -22,7 +22,7 @@ export class HomePage {
   upload_data:string;
   upload_no: any;
 
-  constructor(public storageService: StorageService,,private base64: Base64,public firebase: FirebaseService , public photoService: PhotoService) {
+  constructor(public storageService: StorageService,private base64: Base64,public firebase: FirebaseService , public photoService: PhotoService) {
     this.getuploadList();
     this.upload_no = this.uploadList.length;
     this.storageService.get('user_name').then(result => {

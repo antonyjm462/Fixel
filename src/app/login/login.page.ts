@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { StorageService } from '../storage.service';
 
 @Component({
@@ -38,7 +38,7 @@ export class LoginPage implements OnInit {
     }
 
     register(){
-        this.router.navigate(['admin/register']);
+        this.router.navigate(['register']);
     }
 
     ForgotPassword(){
