@@ -37,8 +37,8 @@ export class FirebaseService {
   }
 
 
-  createFile(file: Upfile) {
-    return this.firestore.collection('uploads').add((JSON.parse(JSON.stringify(file))));
+  createFile(file: Upfile,user: string) {
+    return this.firestore.collection('uploads').doc(user).set((JSON.parse(JSON.stringify(file))));
   }
 
   updateFile(fid, value){

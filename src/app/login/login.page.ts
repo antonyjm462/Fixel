@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { AuthService } from 'src/app/auth.service';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
+import { StorageService } from '../storage.service';
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,9 @@ export class LoginPage implements OnInit {
     userResetEmail: any;
     dialogRef: any;
 
-    constructor(private  authService: AuthService, public router: Router,public dialog: MatDialog) { }
+    constructor(public storageService: StorageService,private  authService: AuthService, public router: Router,public dialog: MatDialog) { 
+      this.storageService.remove('user_name');
+    }
     ngOnInit() {}
 
     openDialog() {
@@ -26,6 +29,11 @@ export class LoginPage implements OnInit {
       }
 
     onLogin(){
+      this.storageService.set('user_name', this.userEmail).then(result => {
+        console.log('Data is saved'); 
+        }).catch(e => {
+        console.log("error: " + e);
+        });
         this.authService.login(this.userEmail, this.password);
     }
 
