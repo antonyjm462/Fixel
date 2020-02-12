@@ -23,10 +23,10 @@
                                     <input type="text" class="form-control form-control-user"  placeholder="Enter name" required="true">                                                                                                                        
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Enter email" required="true">                                                                        
+                                    <input type="email" class="form-control form-control-user" aria-describedby="emailHelp" placeholder="Enter email" required="true" [(ngModel)]="userEmail" [ngModelOptions]="{standalone: true}">                                                                        
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" placeholder="Password" required="true">
+                                    <input type="password" class="form-control form-control-user" placeholder="Password" required="true" [(ngModel)]="password" [ngModelOptions]="{standalone: true}">
                                 </div>
                                 <div class="form-group">
                                     <input type="password" class="form-control form-control-user" placeholder="Confirm Password" required="true">
@@ -34,8 +34,7 @@
                                 <div class="form-group form-check" (click)='login()'>
                                     <a style="color: blue">login?</a>
                                 </div>
-                                <button type="submit" class="btn btn-user btn-block" (click)='onRegister()'>Register</button>
-                                <button type="submit" class="btn btn-user btn-block" >Sign up with Google</button>                                
+                                <button type="submit" class="btn btn-user btn-block" (click)='onRegister()'>Register</button>                             
                             </form>
                         </div>
                     </div>

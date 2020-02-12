@@ -17,12 +17,6 @@ export class FirebaseService {
     AngularFireModule.initializeApp(environment.firebase);
    }
 
-   documentToDomainObject = _ => {
-    const object = _.payload.doc.data();
-    object.id = _.payload.doc.id;
-    return object;
-}
-
   getItem(item: string) {
     return this.firestore.collection(item).snapshotChanges().pipe(map( docArray => {
       return docArray.map( doc => {

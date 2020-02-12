@@ -4,6 +4,7 @@ import { FirebaseService } from '../firebase.service';
 import { Upfile } from '../model/upfile';
 import { Base64 } from '@ionic-native/base64/ngx'
 import { StorageService } from '../storage.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -22,9 +23,8 @@ export class HomePage {
   upload_data:string;
   upload_no: any;
 
-  constructor(public storageService: StorageService,private base64: Base64,public firebase: FirebaseService , public photoService: PhotoService) {
+  constructor(public router: Router,public storageService: StorageService,private base64: Base64,public firebase: FirebaseService , public photoService: PhotoService) {
     this.getuploadList();
-    this.upload_no = this.uploadList.length;
     this.storageService.get('user_name').then(result => {
       if (result != null) {  
       console.log('Username: '+ result);
@@ -36,8 +36,7 @@ export class HomePage {
   }
 
   ngOnInit() {
-    this.photoService.loadSaved(); 
-  console.log(this.uploadList);}
+    this.photoService.loadSaved();}
 
 
   getuploadList = () =>
@@ -46,14 +45,25 @@ export class HomePage {
     .subscribe((res: any) => (this.uploadList = res));
 
   selectImage(img){
-    this.uploadList.push(img);
-      console.log(this.uploadList);
+    for(let i=0;i< this.uploadList.length;i++){
+      if(this.uploadList[i].id == this.currentuser){
+        this.imageLists = JSON.parse(this.uploadList[i].data);
+        break;
+      } else {
+        this.imageLists =[];
+      }
+    }
+    this.imageLists.push(img);
+      console.log(this.imageLists);
     }
 
     uploadImage(){
-      for (var i = 0; i < this.uploadList.length; i++){
-        this.data = { data: { i:this.imageLists[i] }};
+        this.data = { data: this.imageLists };
         this.firebase.createFile(this.data,this.currentuser);
-      }
+    }
+
+    logout(){
+      this.storageService.remove('user_name');
+      this.router.navigate(['']);
     }
 }

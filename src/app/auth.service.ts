@@ -36,7 +36,6 @@ async register(email: string, password: string) {
   }).catch(error=>{
     console.log(error);
   });
-  this.sendEmailVerification();
 }
 
 async sendEmailVerification() {

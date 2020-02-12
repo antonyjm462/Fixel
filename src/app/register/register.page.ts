@@ -14,7 +14,7 @@ export class RegisterPage implements OnInit {
   ngOnInit() {}
 
   onRegister(){
-      this.authService.register(this.userEmail.toString(), this.password.toString());
+      this.authService.register(this.userEmail, this.password);
   }
 
   login(){
