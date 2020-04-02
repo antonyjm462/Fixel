@@ -66,4 +66,8 @@ export class HomePage {
       this.storageService.remove('user_name');
       this.router.navigate(['']);
     }
+
+    gallery(){
+      this.router.navigate(['gallery']);
+    }
 }
