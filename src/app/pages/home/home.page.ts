@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { PhotoService } from '../photo.service';
-import { FirebaseService } from '../firebase.service';
-import { Upfile } from '../model/upfile';
+import { PhotoService } from '../../services/photo.service';
+import { FirebaseService } from '../../services/firebase.service';
+import { Upfile } from '../../model/upfile';
 import { Base64 } from '@ionic-native/base64/ngx'
-import { StorageService } from '../storage.service';
+import { StorageService } from '../../services/storage.service';
 import { Router } from '@angular/router';
 
 @Component({

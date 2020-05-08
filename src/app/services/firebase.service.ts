@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { Upfile } from './model/upfile';
+import { Upfile } from '../model/upfile';
 
 @Injectable({
   providedIn: 'root'

@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
-import { StorageService } from "../storage.service";
+import { StorageService } from "../../services/storage.service";
 import { HTTP } from "@ionic-native/http/ngx";
-import { FirebaseService } from "../firebase.service";
+import { FirebaseService } from "../../services/firebase.service";
 
 @Component({
   selector: "app-gallery",
