@@ -13,7 +13,7 @@ A Deep learning project which targets improving the camera quality for budget ph
 - [Fixel Django Server](https://github.com/antonyjm462/FixelServer)
 - [Fixel Api](https://github.com/antonyjm462/FixelAPI)
 
-<br><p align="center"> <img src="FIXEL_font.png" alt="FIXEL" width="200"></p> <br>
+<br><p align="center"> <img src="./img/FIXEL_font.png" alt="FIXEL" width="200"></p> <br>
 ## Key Features
 
 * Ionic App to Take Photo and sent to database as induvidual or Group
