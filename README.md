@@ -1,5 +1,6 @@
 
 <h1 align="center">
+<p align="center"><img src="src/assets/icon/f.png" alt="FIXEL" width="200"></p>
   FIXEL (Ai App to Increse Photo Resolution)
   <br>
 </h1>
@@ -12,6 +13,7 @@ A Deep learning project which targets improving the camera quality for budget ph
 - [Fixel Django Server](https://github.com/antonyjm462/FixelServer)
 - [Fixel Api](https://github.com/antonyjm462/FixelAPI)
 
+<br><p align="center"> <img src="FIXEL_font.png" alt="FIXEL" width="200"></p> <br>
 ## Key Features
 
 * Ionic App to Take Photo and sent to database as induvidual or Group
